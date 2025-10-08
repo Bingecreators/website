@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply m-0 p-0 box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply m-0 p-0 overflow-x-hidden;
+    font-family: Arial, sans-serif;
+  }
+}
+
+@layer utilities {
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes titleFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes descriptionFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes witnessButtonFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-fadeInDown {
+    animation: fadeInDown 0.8s ease-out both;
+  }
+
+  .animate-fadeInRight {
+    animation: fadeInRight 0.8s ease-out 0.5s both;
+  }
+
+  .animate-titleFadeIn {
+    animation: titleFadeIn 1.2s ease-out 0.8s both;
+  }
+
+  .animate-descriptionFadeIn {
+    animation: descriptionFadeIn 1.2s ease-out 1.2s both;
+  }
+
+  .animate-witnessButtonFadeIn {
+    animation: witnessButtonFadeIn 1.2s ease-out 1.6s both;
+  }
+}

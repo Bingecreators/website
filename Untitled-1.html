@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Common section styling */
+    .section {
+      min-height: 100vh;
+      background: url('2366f93e44b3106742402a27e8c86d30[1].jpg') no-repeat center center;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+      padding: 80px 20px 20px 20px;
+    }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 20px 0;
+      transition: all 0.3s ease;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 40px;
+    }
+
+    .cta-container {
+      position: absolute;
+      right: 20px;
+    }
+
+    .nav-btn {
+      padding: 15px 30px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      text-decoration: none;
+      display: inline-block;
+      backdrop-filter: blur(10px);
+      transform: translateY(0);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .nav-btn:nth-child(1) { animation-delay: 0.1s; }
+    .nav-btn:nth-child(2) { animation-delay: 0.2s; }
+    .nav-btn:nth-child(3) { animation-delay: 0.3s; }
+    .nav-btn:nth-child(4) { animation-delay: 0.4s; }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.8);
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-btn:active {
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    .nav-btn.active {
+      background: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .cta-btn {
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #8B5CF6, #A855F7);
+      border: 2px solid #8B5CF6;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      text-decoration: none;
+      display: inline-block;
+      backdrop-filter: blur(10px);
+      transform: translateY(0);
+      box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+      animation: fadeInRight 0.8s ease-out 0.5s both;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .cta-btn:hover::before {
+      left: 100%;
+    }
+
+    .cta-btn:hover {
+      background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+      transform: translateY(-8px) scale(1.08);
+      box-shadow: 0 12px 30px rgba(139, 92, 246, 0.6);
+      border-color: #7C3AED;
+    }
+
+    .cta-btn:active {
+      transform: translateY(-4px) scale(1.05);
+    }
+
+    .witness-btn {
+      padding: 18px 35px;
+      background: linear-gradient(135deg, #8B5CF6, #A855F7);
+      border: 2px solid #8B5CF6;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      text-decoration: none;
+      display: inline-block;
+      backdrop-filter: blur(10px);
+      transform: translateY(0);
+      box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+      animation: witnessButtonFadeIn 1.2s ease-out 1.6s both;
+      position: relative;
+      overflow: hidden;
+      margin-top: 30px;
+    }
+
+    .witness-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .witness-btn:hover::before {
+      left: 100%;
+    }
+
+    .witness-btn:hover {
+      background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+      transform: translateY(-8px) scale(1.08);
+      box-shadow: 0 12px 30px rgba(139, 92, 246, 0.6);
+      border-color: #7C3AED;
+    }
+
+    .witness-btn:active {
+      transform: translateY(-4px) scale(1.05);
+    }
+
+    /* Section Container Styling */
+    .section-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 10;
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      font-family: 'Anton', Arial, sans-serif;
+      font-size: 5rem;
+      font-weight: 900;
+      color: #7f00ff;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+      text-align: left;
+    }
+
+    .section-description {
+      font-family: 'helmet neue', 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 17px;
+      font-weight: 400;
+      color: #000000;
+      margin-bottom: 50px;
+      max-width: 800px;
+      line-height: 1.6;
+      letter-spacing: 0;
+    }
+
+    /* Services Section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+      margin-bottom: 50px;
+    }
+
+    .service-box {
+      background: rgba(139, 92, 246, 0.1);
+      border: 2px solid #8B5CF6;
+      border-radius: 15px;
+      padding: 20px 15px;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .service-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(139, 92, 246, 0.3);
+    }
+
+    .service-title {
+      font-family: 'Anton', Arial, sans-serif;
+      color: #7f00ff;
+      font-size: 1.2rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .service-desc {
+      font-family: 'helmet neue', 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #000000;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    /* Works Section */
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+      margin-bottom: 50px;
+    }
+
+    .work-frame {
+      background: rgba(139, 92, 246, 0.1);
+      border: 2px solid #8B5CF6;
+      border-radius: 15px;
+      padding: 30px 20px;
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .work-frame:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(139, 92, 246, 0.3);
+    }
+
+    .work-placeholder {
+      color: #8B5CF6;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Testimonials Section */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+      margin-bottom: 50px;
+    }
+
+    .testimonial-box {
+      background: rgba(139, 92, 246, 0.1);
+      border: 2px solid #8B5CF6;
+      border-radius: 15px;
+      padding: 40px 30px;
+      min-height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .testimonial-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(139, 92, 246, 0.3);
+    }
+
+    .testimonial-placeholder {
+      color: #8B5CF6;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Home Section */
+    .home-section {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      z-index: 10;
+    }
+
+    .main-title {
+      margin-left: 10%;
+      text-align: left;
+      z-index: 1001;
+      position: relative;
+    }
+
+    .main-title h1 {
+      font-family: 'Anton', Arial, sans-serif;
+      font-size: 6rem;
+      font-weight: 900;
+      color: #7f00ff;
+      margin: 0;
+      letter-spacing: 2px;
+      line-height: 0.7;
+      animation: titleFadeIn 1.2s ease-out 0.8s both;
+    }
+
+    .description {
+      font-family: 'helmet neue', 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 17px;
+      font-weight: 400;
+      color: #1a1a1a;
+      margin-top: 40px;
+      max-width: 800px;
+      line-height: 1.6;
+      letter-spacing: 0;
+      animation: descriptionFadeIn 1.2s ease-out 1.2s both;
+    }
+
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes titleFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes descriptionFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes witnessButtonFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+      }
+      
+      .main-nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .nav-btn, .cta-btn {
+        width: 200px;
+        text-align: center;
+      }
+      
+      .cta-container {
+        position: relative;
+        right: auto;
+      }
+      
+      .main-title h1 {
+        font-size: 3rem;
+        letter-spacing: 1px;
+      }
+      
+      .description {
+        font-size: 15px;
+      }
+      
+      .section-title {
+        font-size: 3rem;
+      }
+      
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+      
+      .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+      
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    .our-works-section {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: url('2366f93e44b3106742402a27e8c86d30[1].jpg') no-repeat center center;
+      background-size: cover;
+      z-index: 2000;
+      display: none;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      padding: 20px 20px 100px 20px;
+    }
+
+    .our-works-section::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .works-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .works-title {
+      font-family: 'Anton', Arial, sans-serif;
+      font-size: 5rem;
+      font-weight: 900;
+      color: #7f00ff;
+      margin-bottom: 30px;
+      margin-top: 20px;
+      letter-spacing: 2px;
+    }
+
+    .works-description {
+      font-family: 'Anton', Arial, sans-serif;
+      font-size: 1.4rem;
+      color: #000000;
+      margin-bottom: 50px;
+      max-width: 800px;
+      line-height: 1.3;
+      letter-spacing: 0.5px;
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+      max-width: 1200px;
+      margin-bottom: 50px;
+    }
+
+    .work-frame {
+      background: rgba(139, 92, 246, 0.1);
+      border: 2px solid #8B5CF6;
+      border-radius: 15px;
+      padding: 30px 20px;
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .work-frame:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(139, 92, 246, 0.3);
+    }
+
+    .work-placeholder {
+      color: #8B5CF6;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .close-btn {
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      background: #7f00ff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 2001;
+    }
+
+    .close-btn:hover {
+      background: #6600cc;
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        max-width: 100%;
+      }
+      
+      .works-title {
+        font-size: 3rem;
+      }
+      
+      .works-description {
+        font-size: 1.2rem;
+      }
+    }
+
+    .testimonials-section {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: url('2366f93e44b3106742402a27e8c86d30[1].jpg') no-repeat center center;
+      background-size: cover;
+      z-index: 2000;
+      display: none;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      padding: 20px 20px 100px 20px;
+    }
+
+    .testimonials-section::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .testimonials-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .testimonials-title {
+      font-family: 'Anton', Arial, sans-serif;
+      font-size: 5rem;
+      font-weight: 900;
+      color: #7f00ff;
+      margin-bottom: 30px;
+      margin-top: 20px;
+      letter-spacing: 2px;
+    }
+
+    .testimonials-description {
+      font-family: 'Anton', Arial, sans-serif;
+      font-size: 1.4rem;
+      color: #000000;
+      margin-bottom: 50px;
+      max-width: 800px;
+      line-height: 1.3;
+      letter-spacing: 0.5px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+      max-width: 1000px;
+      margin-bottom: 50px;
+    }
+
+    .testimonial-box {
+      background: rgba(139, 92, 246, 0.1);
+      border: 2px solid #8B5CF6;
+      border-radius: 15px;
+      padding: 40px 30px;
+      min-height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .testimonial-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(139, 92, 246, 0.3);
+    }
+
+    .testimonial-placeholder {
+      color: #8B5CF6;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .services-section {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: url('2366f93e44b3106742402a27e8c86d30[1].jpg') no-repeat center center;
+      background-size: cover;
+      z-index: 2000;
+      display: none;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      padding: 20px 20px 100px 20px;
+    }
+
+    .services-section::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .services-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .services-title {
+      font-family: 'Anton', Arial, sans-serif;
+      font-size: 5rem;
+      font-weight: 900;
+      color: #7f00ff;
+      margin-bottom: 30px;
+      margin-top: 20px;
+      letter-spacing: 2px;
+    }
+
+    .services-description {
+      font-family: 'Anton', Arial, sans-serif;
+      font-size: 1.4rem;
+      color: #000000;
+      margin-bottom: 50px;
+      max-width: 800px;
+      line-height: 1.3;
+      letter-spacing: 0.5px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+      max-width: 1200px;
+      margin-bottom: 50px;
+    }
+
+    .service-box {
+      background: rgba(139, 92, 246, 0.1);
+      border: 2px solid #8B5CF6;
+      border-radius: 15px;
+      padding: 20px 15px;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .service-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(139, 92, 246, 0.3);
+    }
+
+    .service-title {
+      font-family: 'Anton', Arial, sans-serif;
+      color: #7f00ff;
+      font-size: 1.2rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .service-desc {
+      font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #000000;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="main-nav">
+        <a href="#home" class="nav-btn">Home</a>
+        <a href="#services" class="nav-btn">Services</a>
+        <a href="#our-works" class="nav-btn">Our works</a>
+        <a href="#testimonials" class="nav-btn">Testimonials</a>
+      </div>
+      <div class="cta-container">
+        <a href="#contact" class="cta-btn">GET IN TOUCH</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="section home-section">
+    <div class="main-title">
+      <h1>CUT-ENGAGE-<br><br>CONVERT - REPEAT !</h1>
+      <p class="description">Your ultimate Post-Production Agency flipping 'meh' videos into epic "wahh" masterpieces with rock solid consistency in every frame</p>
+      <a href="#our-works" class="witness-btn">WITNESS OUR MAGIC!</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section">
+    <div class="section-container">
+      <h2 class="section-title">POST PRODUCTION EXCELLENCE</h2>
+      <p class="section-description">From Raw to Iconic Vibes Straight fire post-prod wizardry that turns your messy raw clips into slick, can't-scroll-past content that'll have 'em hooked. Good's not enough, we're chasing extraordinary</p>
+      
+      <div class="services-grid">
+        <div class="service-box">
+          <h3 class="service-title">VIDEO EDITING</h3>
+          <p class="service-desc">Razor-sharp edits<br>paired with peak storytelling</p>
+        </div>
+        <div class="service-box">
+          <h3 class="service-title">MOTION GRAPHICS</h3>
+          <p class="service-desc">We whip up animations that<br>snag eyeballs<br>and steal hearts</p>
+        </div>
+        <div class="service-box">
+          <h3 class="service-title">GRAPHIC DESIGNING</h3>
+          <p class="service-desc">We whip up bold,<br>zesty graphics that scream<br>your brand's wild energy</p>
+        </div>
+        <div class="service-box">
+          <h3 class="service-title">SOCIAL MEDIA<br>MANAGEMENT</h3>
+          <p class="service-desc">Razor-sharp edits<br>paired with peak storytelling</p>
+        </div>
+      </div>
+      
+      <div style="height: 100px; display: flex; align-items: center; justify-content: center;">
+        <p style="font-family: 'Anton', Arial, sans-serif; color: #7f00ff; font-size: 2.5rem; text-align: center; font-weight: 900; letter-spacing: 2px;">THE POINT IS TO BE REMEMBERED!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Works Section -->
+  <section id="our-works" class="section">
+    <div class="section-container">
+      <h2 class="section-title">OUR WORKS</h2>
+      <p class="section-description">From Raw to Iconic Vibes Straight fire post-prod wizardry that turns your messy raw clips into slick, can't-scroll-past content that'll have 'em hooked. Good's not enough, we're chasing extraordinary</p>
+      
+      <div class="works-grid">
+        <div class="work-frame">
+          <div class="work-placeholder">
+            🎥 Project Frame 1<br>
+            <small>Add your work here</small>
+          </div>
+        </div>
+        <div class="work-frame">
+          <div class="work-placeholder">
+            🎥 Project Frame 2<br>
+            <small>Add your work here</small>
+          </div>
+        </div>
+        <div class="work-frame">
+          <div class="work-placeholder">
+            🎥 Project Frame 3<br>
+            <small>Add your work here</small>
+          </div>
+        </div>
+        <div class="work-frame">
+          <div class="work-placeholder">
+            🎥 Project Frame 4<br>
+            <small>Add your work here</small>
+          </div>
+        </div>
+      </div>
+      
+      <div style="height: 100px; display: flex; align-items: center; justify-content: center;">
+        <p style="font-family: 'Anton', Arial, sans-serif; color: #7f00ff; font-size: 1.2rem; text-align: center;">Scroll to explore all projects</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section">
+    <div class="section-container">
+      <h2 class="section-title">TESTIMONIALS</h2>
+      <p class="section-description">Hear straight from our star clients why teaming up with us is one wild, epic rollercoaster of creativity and chaos</p>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-box">
+          <div class="testimonial-placeholder">
+            🎥 Testimonial 1<br>
+            <small>Add image or video here</small>
+          </div>
+        </div>
+        <div class="testimonial-box">
+          <div class="testimonial-placeholder">
+            🎥 Testimonial 2<br>
+            <small>Add image or video here</small>
+          </div>
+        </div>
+      </div>
+      
+      <div style="height: 100px; display: flex; align-items: center; justify-content: center;">
+        <p style="font-family: 'Anton', Arial, sans-serif; color: #7f00ff; font-size: 1.2rem; text-align: center;">Client testimonials showcase</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.nav-btn, .witness-btn');
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+      
+      // Update active navigation on scroll
+      const sections = document.querySelectorAll('.section');
+      const navButtons = document.querySelectorAll('.nav-btn');
+      
+      function updateActiveNav() {
+        let current = '';
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+          }
+        });
+        
+        navButtons.forEach(btn => {
+          btn.classList.remove('active');
+          if (btn.getAttribute('href') === '#' + current) {
+            btn.classList.add('active');
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', updateActiveNav);
+    });
+  </script>
+
+</body>
+</html>
