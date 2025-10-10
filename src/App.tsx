@@ -143,7 +143,7 @@ function App() {
           <div className="grid grid-cols-4 gap-6">
             <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-purple-600 hover:scale-105 transition-all duration-300 bg-black aspect-[9/16]">
               <iframe
-                src="https://player.cloudinary.com/embed/?cloud_name=dvgupjjr3&public_id=Website_2_wy2wls&profile=cld-default"
+                src="https://player.cloudinary.com/embed/?cloud_name=dkfiefxwt&public_id=Web_1_rx74en&profile=cld-default"
                 width="100%"
                 height="100%"
                 allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
@@ -154,7 +154,7 @@ function App() {
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-purple-600 hover:scale-105 transition-all duration-300 bg-black aspect-[9/16]">
               <iframe
-                src="https://player.cloudinary.com/embed/?cloud_name=dvgupjjr3&public_id=Website_Update_sccaay&profile=cld-default"
+                src="https://player.cloudinary.com/embed/?cloud_name=dkfiefxwt&public_id=Aunty_Final_bxjjb1&profile=cld-default"
                 width="100%"
                 height="100%"
                 allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
@@ -164,19 +164,15 @@ function App() {
               ></iframe>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-purple-600 hover:scale-105 transition-all duration-300 bg-black aspect-[9/16]">
-              <iframe
-                src="https://player.cloudinary.com/embed/?cloud_name=dvgupjjr3&public_id=WhatsApp_Video_2025-07-25_at_19.50.19_c4f8c5b1_hfguem&profile=cld-default"
-                width="100%"
-                height="100%"
-                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-                allowFullScreen
-                frameBorder="0"
-                className="w-full h-full"
-              ></iframe>
+              <video
+                src="https://res.cloudinary.com/dkfiefxwt/video/upload/v1760068650/Sep_23_Final_x67whq.mp4"
+                controls
+                className="w-full h-full object-cover"
+              ></video>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-purple-600 hover:scale-105 transition-all duration-300 bg-black aspect-[9/16]">
               <iframe
-                src="https://player.cloudinary.com/embed/?cloud_name=dvgupjjr3&public_id=Portfolio_1_on2awt&profile=cld-default"
+                src="https://player.cloudinary.com/embed/?cloud_name=dkfiefxwt&public_id=Dining_room_wqjdf7&profile=cld-default"
                 width="100%"
                 height="100%"
                 allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
