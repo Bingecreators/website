@@ -218,7 +218,7 @@ function App() {
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-10 hover:bg-purple-600 hover:text-white transition-all duration-500 shadow-xl">
               <div className="flex justify-center mb-6">
                 <img
-                  src="https://res.cloudinary.com/dvgupjjr3/image/upload/v1759852310/Screenshot_2025-10-07_211857_cf72fm.png"
+                  src="https://res.cloudinary.com/dkfiefxwt/image/upload/v1760087209/Sid_DP_mbnxbl.jpg"
                   alt="Siddarth"
                   className="w-20 h-20 rounded-full object-cover border-4 border-purple-600"
                 />
