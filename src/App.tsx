@@ -109,15 +109,30 @@ function App() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-16">
-            <div className="service-box bg-white/80 backdrop-blur-sm rounded-3xl p-10 hover:bg-purple-600 hover:text-white transition-all duration-500 cursor-pointer shadow-xl">
+            <div className="service-box bg-white/80 backdrop-blur-sm rounded-3xl p-10 hover:bg-purple-600 hover:text-white transition-all duration-500 cursor-pointer shadow-xl group">
+              <div className="flex justify-center mb-6">
+                <svg className="w-16 h-16 text-purple-600 group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </div>
               <h3 className="font-['Anton',Arial,sans-serif] text-3xl font-black mb-4">VIDEO EDITING</h3>
               <p className="text-lg font-medium leading-relaxed">Cut, pace, and polish your story with cinematic rhythm and style.</p>
             </div>
-            <div className="service-box bg-white/80 backdrop-blur-sm rounded-3xl p-10 hover:bg-purple-600 hover:text-white transition-all duration-500 cursor-pointer shadow-xl">
+            <div className="service-box bg-white/80 backdrop-blur-sm rounded-3xl p-10 hover:bg-purple-600 hover:text-white transition-all duration-500 cursor-pointer shadow-xl group">
+              <div className="flex justify-center mb-6">
+                <svg className="w-16 h-16 text-purple-600 group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                </svg>
+              </div>
               <h3 className="font-['Anton',Arial,sans-serif] text-3xl font-black mb-4">SOUND DESIGN</h3>
               <p className="text-lg font-medium leading-relaxed">Every frame deserves audio that breathes emotion into visuals.</p>
             </div>
-            <div className="service-box bg-white/80 backdrop-blur-sm rounded-3xl p-10 hover:bg-purple-600 hover:text-white transition-all duration-500 cursor-pointer shadow-xl">
+            <div className="service-box bg-white/80 backdrop-blur-sm rounded-3xl p-10 hover:bg-purple-600 hover:text-white transition-all duration-500 cursor-pointer shadow-xl group">
+              <div className="flex justify-center mb-6">
+                <svg className="w-16 h-16 text-purple-600 group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                </svg>
+              </div>
               <h3 className="font-['Anton',Arial,sans-serif] text-3xl font-black mb-4">COLOR GRADING</h3>
               <p className="text-lg font-medium leading-relaxed">Frame-by-frame cinematic hues that define your visual identity.</p>
             </div>
