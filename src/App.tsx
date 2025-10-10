@@ -224,7 +224,7 @@ function App() {
                 />
               </div>
               <p className="text-lg leading-relaxed mb-6">
-                "Call?"
+                "The creative flair you bring to the table is absolutely next level—it's like magic for our content! You guys take the worst recorded videos and transform them into solid 10/10 masterpieces that captivate our audience. From seamless edits to punchy visuals, every project feels polished and professional. Thoroughly enjoyed working with you guys. Your team is doing tremendous job!"
               </p>
               <h4 className="font-['Anton',Arial,sans-serif] text-2xl font-black">– Siddarth</h4>
               <p className="text-sm font-medium mt-2">Founder of ThreeLeafAcademy</p>
